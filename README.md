@@ -10,9 +10,9 @@ Thank u for all.
 
 a simple demo is made to the folder 'src'
 
-1.fetch the whole file to local and in the same folder run 'rpm install' to instaill the dependencies.
+1.fetch the whole file to local and in the same folder run 'npm install' to instaill the dependencies.
 
-2.run rpm test to start the server.
+2.run npm test to start the server.
 
 3.browse http://127.0.0.1:3000 => hello world! ; browse http://127.0.0.1:3000/saveArticle => u will see repsond with a json string and one row of record will be inserted in our mongoDB.
 
