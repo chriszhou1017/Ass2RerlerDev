@@ -1,20 +1,18 @@
 var express = require('express');
-var aricleDao = require('./dao/articleDao.js');
+var article= require('./controller/articleController');
+var bodyParser = require('body-parser');
 var app = express();
+
+
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-app.get('/saveArticle', function (req, res) {
-  aricleDao.insert(function(msg){
-
-	res.send(msg);
-
-  });
-
-
-});
+app.use("/article",article);
 
 var server = app.listen(3000, function () {
   var host = server.address().address;

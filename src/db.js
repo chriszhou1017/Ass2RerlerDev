@@ -2,26 +2,26 @@ var mongoose = require('mongoose'),
     DB_URL = 'mongodb://test:sdm2017@13.59.75.212:27017/test';
 
 /**
- * connect
+ * 连接
  */
 mongoose.connect(DB_URL);
 
 /**
-  * successful connection
+  * 连接成功
   */
 mongoose.connection.on('connected', function () {    
     console.log('Mongoose connection open to ' + DB_URL);  
 });    
 
 /**
- * exception
+ * 连接异常
  */
 mongoose.connection.on('error',function (err) {    
     console.log('Mongoose connection error: ' + err);  
 });    
  
 /**
- * disconnect
+ * 连接断开
  */
 mongoose.connection.on('disconnected', function () {    
     console.log('Mongoose connection disconnected');  

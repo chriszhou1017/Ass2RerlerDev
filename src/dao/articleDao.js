@@ -4,18 +4,24 @@ var AriticleDao = {};
 /**
  * 插入
  */
-AriticleDao.insert=function(callback) {
+AriticleDao.insert=function(article,callback) {
  
     var article= new Article({
-        author:'Runeson',
-        title : 'Guidelines for conducting and reportingcase study research in software engineering', 
-        year: 2017                                                   
+        author: article.author,
+        title : article.title, 
+        journal: article.journal,
+        year: article.year,
+        volume: article.volume,
+        number: article.number,
+        pages: article.pages,
+        saveDate: new Date(),
+        status: 'userUpload'
     });
 
     article.save(function (err, res) {
 
         if (err) {
-            callback(err);
+            callback({status:'ERROR',msgBody:err});
             console.log("Error:" + err);
         }
         else {
@@ -25,6 +31,7 @@ AriticleDao.insert=function(callback) {
 
     });
 }
+
 
 
 module.exports = AriticleDao;
