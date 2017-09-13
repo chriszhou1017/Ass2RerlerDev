@@ -7,6 +7,7 @@ var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use('/inforEntry', express.static('webapps'));
 
 app.get('/', function (req, res) {
   res.send('Hello World!');

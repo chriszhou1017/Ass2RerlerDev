@@ -1,7 +1,7 @@
-var mongoose = require('./db/db.js');
-var Schema = mongoose.Schema;
+const mongoose = require('./db/db.js');
+const Schema = mongoose.Schema;
 
-var articleSchema = new Schema({          
+let articleSchema = new Schema({          
     author : String ,                   
     title :  String , 
     journal: String,                      
