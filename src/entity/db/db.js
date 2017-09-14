@@ -1,4 +1,4 @@
-var mongoose = require('mongoose'),
+const mongoose = require('mongoose'),
     DB_URL = 'mongodb://test:sdm2017@13.59.75.212:27017/test';
 
 /**

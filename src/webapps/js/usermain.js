@@ -82,11 +82,24 @@ const util_handler=(function(){
 		backToFormSheet:function(){
 		let panel =  $('#articlepanel');
 		panel.removeClass('reference');
+		panel.removeClass('info');
 		if(!panel.hasClass('form'))panel.addClass('form');
 		let formbtn = $('#panel-form-btn');
 		let refbtn = $('#panel-ref-btn');
 		refbtn.removeClass('active');
 		if(!formbtn.hasClass('active'))formbtn.addClass('active');
+    	},
+    	showInfo:function(_title,_msg){
+    			let switchPanel= $("#article-panel-switch");
+    			let title = $('#op-result');
+    			let info=$('#info-msg');
+    			let panel =  $('#articlepanel');
+				panel.removeClass('reference');
+				panel.removeClass('form');
+				if(!switchPanel.hasClass("hide"))switchPanel.addClass("hide");
+    			title.html(_title);
+    			info.html(_msg);
+    			panel.addClass('info');
     	}
 
 	}
@@ -102,7 +115,11 @@ $(document).ready(function(){
 		btn.removeClass("loading");
 		btn.addClass("normal");
 		if(isSuccess){
+			util_handler.showInfo("Success!","Your evidence has been successfully upload to the moderator!");
 			console.log("success saving article :"+JSON.stringify(data.msgBody));
+		}else{
+			util_handler.showInfo("ERROR!",data.msgBody);
+
 		}
 
 		});	
@@ -149,6 +166,11 @@ $(document).ready(function(){
 			});
 		}
 
+	});
+	$("#info-back-btn").on('click',function(){
+		let switchPanel= $("#article-panel-switch");
+		util_handler.backToFormSheet();
+		switchPanel.removeClass("hide");
 	});
 
 

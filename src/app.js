@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use('/inforEntry', express.static('webapps'));
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.redirect('/inforEntry/userMain.html');
 });
 
 app.use("/article",article);
