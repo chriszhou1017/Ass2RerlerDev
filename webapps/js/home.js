@@ -49,7 +49,7 @@ const home_util_handler=(function(){
                     container.accordion({
                                 active: false,
                                 collapsible: true,
-                                heightStyle: "fill"
+                                heightStyle: "content"
                                 });
                     pagination.paginate(pageCount,pgNum,function(cur_number){
                             container.empty();
