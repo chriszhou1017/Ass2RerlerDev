@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SERLER-user-information-entry</title>
+<script src="lib/jquery/jquery-1.11.1.min.js"></script>
+<script src="lib/wangedit/wangEditor.min.js"></script>
+<script src="./js/pubPagination.js"></script>
+<script src="./js/admin.js"></script>
+<link href="./css/pub.css" rel="stylesheet" />
+<link href="./css/pubPagination.css" rel="stylesheet" />
+<link href="./css/admin.css" rel="stylesheet" />
+
+</head>
+<body>
+<div id ="topbar" class="row topbar">
+  <div class="logo"><img src="./testImg/logo.png"></span></div>
+  <ul class="nav nav-pills">
+  <li><a href="home.html">Home</a></li>
+   <li ><a href="userMain.html">Submit article</a></li>
+  <li ><a href="moderator.html">Article select</a></li>
+  <li class="active"><a >Article analyse</a></li>
+  <li ><a href="admin.html">Admin Features</a></li>
+</ul>
+</div>
+
+
+<div id="opr_bannner"> 
+  <div id = "loading-banner" class="center-container">  
+      
+
+      <div id="loading-mask" class="info-banner loading">
+
+      <div class="loading" >
+      <img src= "./testImg/Cube.gif">
+      <div id="loading-txt">Please wait while retrieving data!</div>
+      </div>
+
+      <div class="normal">
+      <div id="normal-txt">
+      
+      </div>
+      <div class="new-news-container">
+      <div id="createNews-btn" class="btn normal">
+        <span> + Create news</span>
+      </div>
+      </div>
+    </div>
+
+        <div class="operating">
+           <div id="operating-txt">
+          Do you want to delete this News?
+        </div>
+        <div class="operating-btn-bar">
+          <div class="select_opr_btn" id="opr_acp_btn">Confirm</div>
+          <div class="select_opr_btn" id="opr_rej_btn">Cancel</div>
+        </div>
+       
+      </div>
+
+
+
+
+    </div>
+      </div>
+
+    </div>
+
+<div id="news-opr-con" class="intable">
+
+<div id= "news-table-container" >
+      <table id = "news-list" class="table center-container">
+        <thead>
+          <tr>
+        <th class="tb-title">Title</th>
+        <th>Date</th>
+        <th>Operate</th>
+          </tr>        
+        </thead>
+        <tbody id="table-list"></tbody>
+      </table>
+       <div id="pagination-container" class="center-container">
+        </div>
+    </div>
+
+
+<div id="news-editor-container" class="center-container">
+	<div class="form-group">
+	<label>Title :</label>
+    <input type="text" class="form-input" id="news-title" >
+	</div>
+<div id="news-editor"></div>
+  <div class="form-group btn-bar">
+      <div id="news-cancel-btn" class="btn normal">
+        <span>Cancel</span>
+  </div>
+</div>
+<div class="form-group btn-bar">
+      <div id="news-submit-btn" class="btn normal">
+        <span>Submit</span>
+  </div>
+</div>
+</div>
+
+<div id="news-info-container" class="center-container">
+  <div id="news-info">
+  <label id="info-title">Success!</label>
+  <div id="info-content">The news has successfully submitted!</div>
+  <div class="form-group">
+      <div id="info-back-btn" class="btn normal">
+        <span>Back</span>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>
