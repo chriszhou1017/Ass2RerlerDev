@@ -34,6 +34,13 @@ router.post('/convertApaArticle', function(req, res){
 	res.set('Content-Type','application/json');
 	res.send({status:'OK',msgBody:apa_obj});
 });
+router.post('/convertIeeeArticle', function(req, res){
+	let {ieee} = req.body;
+	let ieee_obj=aricleFormatHandler.convertIeee(ieee);
+	res.set('Content-Type','application/json');
+	res.send({status:'OK',msgBody:ieee_obj});
+});
+
 
 
 

@@ -220,3 +220,7 @@ body{
 #article-panel-switch.hide{
 	display:none; 
 }
+
+.unvalid{
+    border-bottom: 1px solid #FF0000;
+}

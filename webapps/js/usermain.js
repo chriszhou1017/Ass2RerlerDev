@@ -30,7 +30,7 @@ return {
 				contentType:'application/json',
 				type:'POST',
             	url:'/article/convertApaArticle',
-            	data:"{\"apa\":\""+ref+"\"}",
+            	data:"{\"apa\":\""+encodeURIComponent(ref)+"\"}",
             	dataType:'json',
             	success:function(data){
             		if(data.status=='OK')
@@ -42,8 +42,25 @@ return {
 			    	 callback(false,data);
 			    }				
 			});
-
-
+	},
+		convertIeeeRef:function(callback){
+		let ref = $('#ref-txt').val().trim();
+		$.ajax({
+				contentType:'application/json',
+				type:'POST',
+            	url:'/article/convertIeeeArticle',
+            	data:"{\"ieee\":\""+encodeURIComponent(ref)+"\"}",
+            	dataType:'json',
+            	success:function(data){
+            		if(data.status=='OK')
+            			 callback(true,data);
+            		else
+            			 callback(false,data);
+                },
+			    error:function(){
+			    	 callback(false,data);
+			    }				
+			});
 	}
 
 };
@@ -164,8 +181,19 @@ $(document).ready(function(){
 					util_handler.fillInTheForm(data.msgBody);
 					util_handler.backToFormSheet();
 			});
+		}else if(ref_type == 'ieee'){
+				let btn=$(this);
+			if(btn.hasClass("loading"))return;
+			btn.removeClass("normal");
+			btn.addClass("loading");
+			article_data_handler.convertIeeeRef(function(isSuccess,data){
+					btn.removeClass("loading");
+					btn.addClass("normal");
+					console.log(data);
+					util_handler.fillInTheForm(data.msgBody);
+					util_handler.backToFormSheet();
+			});
 		}
-
 	});
 	$("#info-back-btn").on('click',function(){
 		let switchPanel= $("#article-panel-switch");
