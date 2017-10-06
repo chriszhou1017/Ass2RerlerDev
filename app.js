@@ -1,6 +1,7 @@
 var express = require('express');
 var article= require('./controller/articleController');
 var news= require('./controller/newsController');
+var articleComment= require('./controller/articleCommentController');
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -16,6 +17,7 @@ app.get('/', function (req, res) {
 
 app.use("/article",article);
 app.use("/news",news);
+app.use("/articleComment",articleComment);
 
 var server = app.listen(3000, function () {
   var host = server.address().address;

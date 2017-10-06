@@ -27,6 +27,19 @@ router.get('/pageUnselectedArticle',function(req,res){
 	});
 });
 
+router.get('/pagePassedArticle',function(req,res){
+	let {pageNum} = req.query;
+	let {pageSize} = req.query;
+	const query={"$or":[{'status':"accepted"},{'status':"analysis complete"}]};
+	articleDao.page(query,pageNum,pageSize,function(_err,_data){
+		if(_err==null)
+	res.send({status:'OK',msgBody:_data});
+		else
+	res.send({status:'ERROR',msgBody:_err});
+	});
+});
+
+
 
 router.post('/convertApaArticle', function(req, res){
 	let {apa} = req.body;
@@ -58,6 +71,20 @@ router.post('/passArticle',function(req,res){
 			res.send(msg);
 		
 			
+	});
+
+});
+
+router.post('/acArticle',function(req,res){
+	let {id} = req.body;
+	
+
+	id=mongoose.Types.ObjectId(id);
+		
+	let conditions = {"_id":id};
+	let update = {"status":"analysis complete"};
+	articleDao.update(conditions,update,{},function(msg){			
+			res.send(msg);
 	});
 
 });
