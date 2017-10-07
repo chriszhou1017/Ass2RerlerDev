@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SERLER-user-information-entry</title>
+<script src="lib/jquery/jquery-1.11.1.min.js"></script>
+<script src="./js/usermain.js"></script>
+<link href="./css/pub.css" rel="stylesheet" />
+<link href="./css/usermain.css" rel="stylesheet" />
+</head>
+<body>
+<div id ="topbar" class="row topbar">
+  <div class="logo"><img src="./testImg/logo.png"></div>
+  <ul class="nav nav-pills">
+  <li><a href="home.html">Home</a></li>
+   <li class="active"><a>Submit article</a></li>
+  <li ><a href="./moderator.html">Article select</a></li>
+  <li ><a href="./analyst.html">Article analyse</a></li>
+   <li><a href="admin.html">Admin Features</a></li>
+</ul>
+</div>
+
+<!--
+  public elements end
+-->
+
+<div id="articlepanel-container">
+<div id="articlepanel" class="form">
+  <div class="form-group btn-bar" id= "article-panel-switch">
+    <div class="center-container">
+    <div class="panel-switch-btn left active" id= 'panel-form-btn' link="form" >Form</div>
+    <div class="panel-switch-btn right" id='panel-ref-btn' link="ref">Referece text</div>
+  </div>
+  </div>
+  <div class="form-sheet center-container" id="sheet-form">
+<div class="form-group">
+	<label>Title :</label>
+    <input type="text" class="form-input" id="article-title" >
+</div>
+<div class="form-group">
+	<label>Author :</label>
+    <input type="text" class="form-input" id="article-author" >
+</div>
+<div class="form-group">
+	<label>Journal :</label>
+    <input type="text" class="form-input" id="article-journal" >
+</div>
+<div class="form-group">
+	<label>Year :</label>
+    <input type="text" class="form-input" id="article-year" >
+</div>
+<div class="form-group">
+	<label>Volume :</label>
+    <input type="text" class="form-input" id="article-volume" >
+</div>
+<div class="form-group btn-bar">
+      <div id="article-submit-btn" class="btn normal">
+        <span>Submit</span>
+        <img class="loading-img" src = "./testImg/Cube.gif"></div>
+  </div>
+</div>
+
+<div class="form-sheet center-container" id="sheet-reference">
+  <div class="form-group">
+  <label>Reference :</label>
+    <input type="text" class="form-input reference" id="ref-txt" >
+  </div>
+  <div class="form-group dropdown center-container">
+  <label>Type:</label>
+    <div class="form-input reference-type" id="ref-type" value="apa" >APA</div>
+    <ul class="dropdown-list hide" id="article-title-dropdown">
+     <li class="first atc-dropdown-pills" value="apa" key="APA">APA</li>
+      <li class="atc-dropdown-pills" value="ieee" key="IEEE">IEEE</li>
+      <ul>
+  </div>   
+  <div class="form-group btn-bar">
+      <div id="ref-convert-btn" class="btn normal">
+        <span>Convert</span>
+        <img class="loading-img" src = "./testImg/Cube.gif"></div>
+  </div>
+</div>
+<div class="form-sheet center-container" id="sheet-info">
+<div><span id="op-result">Success!<span></div>
+<div class="info-banner" id="info-msg"></div>
+<div class="form-group btn-bar">
+      <div id="info-back-btn" class="btn normal">
+        <span>Back</span>
+  </div>
+</div>
+</div>
+</div>
+</div>	
+
+
+</body>
+</html>

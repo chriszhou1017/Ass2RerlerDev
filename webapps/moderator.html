@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SERLER-user-information-entry</title>
+<script src="lib/jquery/jquery-1.11.1.min.js"></script>
+<script src="./js/pubPagination.js"></script>
+<script src="./js/moderator.js"></script>
+<link href="./css/pub.css" rel="stylesheet" />
+<link href="./css/pubPagination.css" rel="stylesheet" />
+<link href="./css/moderator.css" rel="stylesheet" />
+</head>
+<body>
+<div id ="topbar" class="row topbar">
+  <div class="logo"><img src="./testImg/logo.png"></span></div>
+  <ul class="nav nav-pills">
+  <li><a href="home.html">Home</a></li>
+   <li ><a href="userMain.html">Submit article</a></li>
+  <li class="active"><a>Article select</a></li>
+  <li ><a href="./analyst.html">Article analyse</a></li>
+   <li><a href="admin.html">Admin Features</a></li>
+</ul>
+</div>
+
+  <div id="article-list-panel-container">
+  <div  class="center-container" id="article-list-panel">
+  
+    <div id = "loading-banner">  
+      <div id="loading-mask" class="info-banner loading">
+
+      <div class="loading" >
+      <img src= "./testImg/Cube.gif">
+      <div id="loading-txt">Please wait while retrieving data!</div>
+      </div>
+
+      <div class="normal">
+      <div id="normal-txt">
+        Welcome, there are <span id="normal-info-count">0</span>
+        unselected evidence to be reviewed
+      </div>
+      </div>
+
+
+        <div class="operating">
+        <div id="operating-txt">
+          <span id ="select-info-count"></span> evidences are selected.
+        </div>
+        <div class="operating-btn-bar">
+          <div class="select_opr_btn" id="opr_acp_btn">Accept</div>
+          <div class="select_opr_btn" id="opr_rej_btn">Reject</div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+     
+      </div>
+
+
+    <div id= "article-table-container">
+      <table class="table">
+        <thead>
+          <tr>
+        <th class="tb-title">Title</th>
+        <th>Author</th>
+        <th>Journal</th>
+        <th>Year</th>
+        <th>Operate</th>
+          </tr>        
+        </thead>
+        <tbody id="table-list"></tbody>
+      </table>
+      <div id="pagination-container">
+        </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+</body>
+</html>

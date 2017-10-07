@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SERLER-user-information-entry</title>
+<script src="lib/jquery/jquery-1.11.1.min.js"></script>
+<script src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="./js/pubPagination.js"></script>
+<script src="./js/analyst.js"></script>
+
+<link href="./lib/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
+<link href="./css/pub.css" rel="stylesheet" />
+<link href="./css/pubPagination.css" rel="stylesheet" />
+<link href="./css/analyst.css" rel="stylesheet" />
+
+</head>
+<body>
+<div id ="topbar" class="row topbar">
+  <div class="logo"><img src="./testImg/logo.png"></span></div>
+  <ul class="nav nav-pills">
+  <li><a href="home.html">Home</a></li>
+   <li ><a href="userMain.html">Submit article</a></li>
+  <li ><a href="moderator.html">Article select</a></li>
+  <li class="active"><a >Article analyse</a></li>
+  <li ><a href="admin.html">Admin Features</a></li>
+</ul>
+</div>
+
+ 
+<div id = "loading-banner">  
+      <div id="loading-mask" class="info-banner loading">
+
+      <div class="loading" >
+      <img src= "./testImg/Cube.gif">
+      <div id="loading-txt">Please wait while retrieving data!</div>
+      </div>
+
+      <div class="normal">
+      <div id="normal-txt">
+        Welcome, there are <span id="normal-info-count">0</span>
+        unselected evidence to be reviewed
+      </div>
+      </div>
+
+
+        <div class="operating">
+        <div id="operating-txt">
+          <span id ="select-info-count"></span> evidences are selected.
+        </div>
+        <div class="operating-btn-bar">
+          <div class="select_opr_btn" id="opr_acp_btn">Accept</div>
+          <div class="select_opr_btn" id="opr_rej_btn">Reject</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+ <div id ="article-list-panel">
+  <div id= "article-table-container">
+      <table class="table">
+        <thead>
+          <tr>
+        <th class="tb-title">Title</th>
+        <th>Author</th>
+        <th>Journal</th>
+        <th>Year</th>
+        <th>Status</th>
+        <th>Operate</th>
+          </tr>        
+        </thead>
+        <tbody id="table-list"></tbody>
+      </table>
+      <div id="pagination-container">
+        </div>
+    </div>
+  </div>
+
+  <div id = "article-form-panel" class= "center-container hide">
+  <div class="form-sheet" id="sheet-form">
+<div class="form-group">
+  <label>Title :</label>
+    <input type="text" disabled = "disabled" class="form-input article-info" id="article-title" >
+</div>
+<div class="form-group">
+  <label>Author :</label>
+    <input type="text" disabled = "disabled" class="form-input article-info" id="article-author" >
+</div>
+<div class="form-group">
+  <label>Journal :</label>
+    <input type="text" disabled = "disabled" class="form-input article-info" id="article-journal" >
+</div>
+<div class="form-group">
+  <label>Year :</label>
+    <input type="text" disabled = "disabled" class="form-input article-info" id="article-year" >
+</div>
+<div class="form-group">
+  <label>Volume :</label>
+    <input type="text" disabled = "disabled" class="form-input article-info" id="article-volume" >
+</div>
+    <input type="hidden" class="form-input article-info" id="article-id" >
+    <input type="hidden" class="form-input article-info" id="article-status" >
+</div>
+
+
+ <div class="form-sheet" id="comment-form">
+<div class="form-wiget-group rate-bar">
+  <div class="form-wiget-segment">Rates : <span id ="rate-input" value="0">0</span></div>
+    <div id="rates-slider" ></div>
+</div>
+<div class="form-wiget-group">
+     <div class="form-wiget-segment">Research Method :</div>
+   <label for="ckrm1">Case study</label>
+    <input class ="ipt-checkbox" type="checkbox" name="ckrm" value="1" id="ckrm1">
+    <label for="ckrm2">Field Observation</label>
+    <input class ="ipt-checkbox" type="checkbox" name="ckrm" value="2" id="ckrm2">
+    <label for="ckrm3">Experiment</label>
+    <input class ="ipt-checkbox" type="checkbox" name="ckrm" value="3" id="ckrm3">
+    <label for="ckrm4">Survey</label>
+    <input class ="ipt-checkbox" type="checkbox" name="ckrm" value="4" id="ckrm4">
+</div>
+
+<div class="form-wiget-group">
+  <div class="form-wiget-segment">Research Metric :</div>
+    <input type="text" class="form-input" id="article-researchmrts" >
+</div>
+
+<div class="form-wiget-group">
+     <div class="form-wiget-segment">Research Participants:</div>
+   <label for="rp1">undergraduate students</label>
+    <input class ="ipt-checkbox" type="checkbox" name="rp" value="1" id="rp1">
+    <label for="rp2">postgraduate students</label>
+    <input class ="ipt-checkbox" type="checkbox" name="rp" value="1" id="rp2">
+    <label for="rp3">practitioners</label>
+    <input class ="ipt-checkbox" type="checkbox" name="rp" value="1" id="rp3">
+</div>
+<div class="form-wiget-group">
+     <div class="form-wiget-segment">Evidence item:</div>
+     <textarea id = "article-evditm" rows = "6" class="form-wiget-segment"></textarea>
+
+</div>
+
+</div>
+
+
+
+<div class="form-group btn-bar">
+      <div id="article-submit-btn" class="btn normal" onclick="analyst_util_handler.submit()">
+        <span>Submit</span>
+      </div>
+         <div id="article-back-btn" class="btn normal" onclick="analyst_util_handler.backToList()">
+        <span>Back</span>
+        </div>
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

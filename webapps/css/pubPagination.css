@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+
+.pagination *{
+	list-style-type:none;
+	text-decoration: none;
+}
+.pagination{
+	min-height:30px;
+}
+.pagination-pills{
+	float: right;
+	padding: 4px 12px;
+	margin: 3px;
+	background-color: #EEEEEE;
+}
+.pagination-pills.curPage{
+	 background-color: #333;
+	 color:#FFFFFF;
+}
+.pagination-pills:hover{
+	 background-color: #333;
+	 color:#FFFFFF;
+	 cursor: pointer;
+}

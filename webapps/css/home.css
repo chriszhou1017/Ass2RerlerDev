@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.main-dash-container {
+	padding:24px;
+}
+#news-container{
+	width:600px;
+	height:300px;
+}
+.news-title{
+	padding:12px 12px;
+	margin-bottom: 4px;
+	background-color: #333333;
+	color:#FFFFFF;
+}
+
+#news-list-container{
+	
+}
+
+
+
+
+
+
+
+
