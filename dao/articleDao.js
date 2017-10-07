@@ -34,7 +34,7 @@ AriticleDao.insert=function(article,callback) {
 };
 
 AriticleDao.count=function(callback){
-    article.count(function(err,res){
+    Article.count(function(err,res){
         if (err) {
             callback({status:'ERROR',msgBody:err});
             console.log("Error:" + err);
